@@ -1,5 +1,5 @@
 const animatedElements = document.querySelectorAll(
-  ".contact-strip, .topbar, .hero__copy, .hero__panel, .hero__actions, .highlight-card, .section-heading, .product-card, .region-card, .brand-card, .about__content, .about__panel, .cta__content, .footer__grid > div, .location-card, .reviews-overview, .reviews-carousel"
+  ".contact-strip, .topbar, .hero__copy, .hero__stage, .hero__badge, .hero__actions, .highlight-card, .section-heading, .product-card, .product-showcase__card, .region-card, .brand-card, .about__content, .about__panel, .cta__content, .footer__grid > div, .location-card, .reviews-overview, .reviews-carousel"
 );
 
 const navToggle = document.querySelector(".nav-toggle");
