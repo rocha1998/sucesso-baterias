@@ -856,6 +856,14 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   max-width: 200px;
 }
 
+.zetta-logo {
+  max-width: 244px;
+  max-height: 110px;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1.08);
+}
+
 .testimonials-grid {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -1509,6 +1517,12 @@ body.menu-open .nav-toggle__line:nth-child(3) {
     max-width: 160px;
     max-height: 72px;
   }
+
+  .zetta-logo {
+    max-width: 214px;
+    max-height: 92px;
+    transform: scale(1.05);
+  }
 }
 
 @media (max-width: 768px) {
@@ -2003,6 +2017,12 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   .brand-card__logo {
     max-width: 150px;
     max-height: 64px;
+  }
+
+  .zetta-logo {
+    max-width: 192px;
+    max-height: 82px;
+    transform: scale(1.03);
   }
 
   .location-card__map,
