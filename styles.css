@@ -793,8 +793,8 @@ body.menu-open .nav-toggle__line:nth-child(3) {
 .hero__badge {
   position: absolute;
   z-index: 2;
-  top: 7.7rem;
-  right: calc(50% - 208px);
+  top: 0.2rem;
+  right: calc(50% - 232px);
   width: 156px;
   height: 156px;
   padding: 1rem;
@@ -1976,8 +1976,8 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .hero__badge {
-    top: 6rem;
-    right: calc(50% - 170px);
+    top: 0.3rem;
+    right: calc(50% - 186px);
     width: 126px;
     height: 126px;
   }
@@ -2214,8 +2214,8 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .hero__badge {
-    top: 4.45rem;
-    right: calc(50% - 112px);
+    top: 0.4rem;
+    right: calc(50% - 124px);
     width: 110px;
     height: 110px;
     padding: 0.8rem;
