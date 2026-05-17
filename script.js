@@ -1,10 +1,35 @@
 const animatedElements = document.querySelectorAll(
-  ".contact-strip, .topbar, .hero__copy, .hero__panel, .hero__actions, .highlight-card, .section-heading, .product-card, .region-card, .brand-card, .testimonial-card, .about__content, .about__panel, .cta__content, .footer__grid > div"
+  ".contact-strip, .topbar, .hero__copy, .hero__panel, .hero__actions, .highlight-card, .section-heading, .product-card, .region-card, .brand-card, .about__content, .about__panel, .cta__content, .footer__grid > div, .location-card, .reviews-overview, .reviews-carousel"
 );
 
 const navToggle = document.querySelector(".nav-toggle");
 const navShell = document.querySelector(".nav-shell");
 const navLinks = document.querySelectorAll(".nav a, .nav-mobile-cta a");
+const promoPopup = document.querySelector("#promo-popup");
+const promoPopupCloseButtons = document.querySelectorAll("[data-popup-close]");
+const reviewsTrack = document.querySelector("#reviews-track");
+const reviewsScrollButtons = document.querySelectorAll("[data-reviews-scroll]");
+
+const openPromoPopup = () => {
+  if (!promoPopup || sessionStorage.getItem("promoPopupDismissed") === "true") {
+    return;
+  }
+
+  promoPopup.classList.add("is-visible");
+  promoPopup.setAttribute("aria-hidden", "false");
+  document.body.classList.add("promo-open");
+};
+
+const closePromoPopup = () => {
+  if (!promoPopup) {
+    return;
+  }
+
+  promoPopup.classList.remove("is-visible");
+  promoPopup.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("promo-open");
+  sessionStorage.setItem("promoPopupDismissed", "true");
+};
 
 animatedElements.forEach((element) => {
   element.classList.add("reveal");
@@ -60,5 +85,33 @@ if (navToggle && navShell) {
     if (window.innerWidth > 768) {
       closeMobileMenu();
     }
+  });
+}
+
+if (promoPopup) {
+  window.setTimeout(openPromoPopup, 2200);
+
+  promoPopupCloseButtons.forEach((button) => {
+    button.addEventListener("click", closePromoPopup);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closePromoPopup();
+    }
+  });
+}
+
+if (reviewsTrack) {
+  reviewsScrollButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const direction = button.dataset.reviewsScroll === "next" ? 1 : -1;
+      const scrollAmount = reviewsTrack.clientWidth * 0.88;
+
+      reviewsTrack.scrollBy({
+        left: scrollAmount * direction,
+        behavior: "smooth",
+      });
+    });
   });
 }

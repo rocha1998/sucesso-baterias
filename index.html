@@ -18,6 +18,44 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="promo-popup" id="promo-popup" aria-hidden="true">
+    <div class="promo-popup__backdrop" data-popup-close></div>
+    <div
+      class="promo-popup__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="promo-popup-title"
+      aria-describedby="promo-popup-text"
+    >
+      <button
+        class="promo-popup__close"
+        type="button"
+        aria-label="Fechar popup promocional"
+        data-popup-close
+      >
+        &times;
+      </button>
+      <span class="promo-popup__eyebrow">Oferta de boas-vindas</span>
+      <h2 id="promo-popup-title">🔥 Ganhe desconto na sua bateria!</h2>
+      <p id="promo-popup-text">
+        Retire agora seu cupom de 5% OFF para instala&ccedil;&atilde;o e entrega r&aacute;pida.
+      </p>
+      <div class="promo-popup__actions">
+        <a
+          class="button button--primary"
+          href="https://wa.me/5531985640059?text=Olá,%20vim%20pelo%20site%20e%20quero%20meu%20cupom%20de%205%25%20OFF%20para%20bateria."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Chamar no WhatsApp
+        </a>
+        <button class="button button--ghost" type="button" data-popup-close>
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+
   <a
     class="floating-phone"
     href="tel:+5531985640059"
@@ -148,17 +186,21 @@
       <div class="hero__bg"></div>
       <div class="container hero__content">
         <div class="hero__copy">
-          <span class="eyebrow">Atendimento profissional em Belo Horizonte</span>
+          <div>
+            <span class="eyebrow">Atendimento profissional em Belo Horizonte</span>
+            <h1>As melhores baterias automotivas para seu ve&iacute;culo</h1>
+            <p>Trabalhamos com as melhores marcas do mercado, entrega r&aacute;pida e instala&ccedil;&atilde;o no local.</p>
+          </div>
         </div>
 
         <div class="hero__panel">
           <figure class="hero-banner">
             <img
               class="hero-banner__image"
-              src="assets/banner-baterias-automotivas.png"
+              src="assets/carropopular.jpg"
               alt="Baterias automotivas para carros, motos e caminh&otilde;es"
-              width="1693"
-              height="929"
+              width="1200"
+              height="800"
             >
           </figure>
         </div>
@@ -373,65 +415,70 @@
       </div>
     </section>
 
-    <section class="section section--testimonials" id="avaliacoes">
+    <section
+      class="section section--testimonials google-reviews"
+      id="avaliacoes"
+      data-google-maps-url="https://www.google.com/maps/place/Sucesso+Baterias/@-19.9109166,-43.9290187,17z/data=!4m8!3m7!1s0xa69b864b074455:0xb02740050cbf54ba!8m2!3d-19.9109217!4d-43.9264438!9m1!1b1!16s%2Fg%2F11njdyfrh9?hl=pt-BR"
+    >
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Avalia&ccedil;&otilde;es</span>
-          <h2>O que nossos clientes dizem</h2>
-          <p>Depoimentos de clientes que contaram com atendimento r&aacute;pido, instala&ccedil;&atilde;o no local e suporte profissional da Sucesso Baterias.</p>
+          <h2>&#11088; Veja o que nossos clientes dizem no Google</h2>
+          <p>Atendimento &aacute;gil, instala&ccedil;&atilde;o no local e suporte profissional para quem precisa resolver r&aacute;pido.</p>
         </div>
 
-        <div class="testimonials-grid">
-          <article class="testimonial-card">
-            <div class="testimonial-card__top">
-              <div>
-                <strong>Carlos Henrique</strong>
-                <span>Centro - Belo Horizonte</span>
-              </div>
-              <div class="stars" aria-label="Avalia&ccedil;&atilde;o de 5 estrelas">
-                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-              </div>
+        <div class="reviews-overview reveal">
+          <div class="reviews-summary-card">
+            <span class="reviews-summary-card__label">Avalia&ccedil;&otilde;es no Google</span>
+            <strong class="reviews-summary-card__score">Google Maps</strong>
+            <div class="stars stars--summary" aria-label="Avalia&ccedil;&otilde;es dos clientes">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
             </div>
-            <p>"Atendimento r&aacute;pido. Minha bateria descarregou e a equipe chegou no mesmo dia."</p>
-          </article>
+            <span class="reviews-summary-card__count">Confira opini&otilde;es reais diretamente na ficha oficial</span>
+          </div>
 
-          <article class="testimonial-card">
-            <div class="testimonial-card__top">
-              <div>
-                <strong>Mariana Alves</strong>
-                <span>Pampulha - Belo Horizonte</span>
-              </div>
-              <div class="stars" aria-label="Avalia&ccedil;&atilde;o de 5 estrelas">
-                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-              </div>
+          <div class="reviews-overview__content">
+            <p class="reviews-overview__text">
+              Veja coment&aacute;rios de clientes que destacam rapidez no atendimento, instala&ccedil;&atilde;o no local e suporte pelo WhatsApp.
+            </p>
+            <div class="reviews-overview__actions">
+              <a
+                class="button button--primary"
+                href="https://www.google.com/maps/place/Sucesso+Baterias/@-19.9109166,-43.9290187,17z/data=!4m8!3m7!1s0xa69b864b074455:0xb02740050cbf54ba!8m2!3d-19.9109217!4d-43.9264438!9m1!1b1!16s%2Fg%2F11njdyfrh9?hl=pt-BR"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver avalia&ccedil;&otilde;es no Google
+              </a>
             </div>
-            <p>"Pre&ccedil;o justo, instala&ccedil;&atilde;o no local e atendimento muito bem explicado."</p>
-          </article>
-
-          <article class="testimonial-card">
-            <div class="testimonial-card__top">
-              <div>
-                <strong>Roberto Silva</strong>
-                <span>Regi&atilde;o Norte - BH</span>
-              </div>
-              <div class="stars" aria-label="Avalia&ccedil;&atilde;o de 5 estrelas">
-                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-              </div>
-            </div>
-            <p>"Chamei pelo WhatsApp e fui atendido muito r&aacute;pido. Recomendo com confian&ccedil;a."</p>
-          </article>
+          </div>
         </div>
 
-        <div class="testimonials__action">
-          <a
-            class="button button--primary"
-                  href="https://wa.me/5531985640059?text=Olá,%20quero%20deixar%20uma%20avaliação%20sobre%20o%20atendimento."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Enviar minha avalia&ccedil;&atilde;o
-          </a>
+        <div class="reviews-carousel reviews-carousel--single reveal">
+          <div class="reviews-track" id="reviews-track" aria-live="polite">
+            <article class="review-card">
+              <div class="review-card__header">
+                <div class="review-card__avatar"><span>P</span></div>
+                <div class="review-card__identity">
+                  <strong>Philippe Rezende</strong>
+                  <span>5 dias atr&aacute;s</span>
+                </div>
+              </div>
+              <div class="review-card__meta">
+                <div class="stars" aria-hidden="true">
+                  <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+                <span class="review-card__date">5 estrelas</span>
+              </div>
+              <p class="review-card__text">"Me salvou! Que suporte fenomenal, muito obrigado, resolveu meu problema muito r&aacute;pido."</p>
+              <a class="review-card__link" href="https://www.google.com/maps/place/Sucesso+Baterias/@-19.9109166,-43.9290187,17z/data=!4m8!3m7!1s0xa69b864b074455:0xb02740050cbf54ba!8m2!3d-19.9109217!4d-43.9264438!9m1!1b1!16s%2Fg%2F11njdyfrh9?hl=pt-BR" target="_blank" rel="noopener noreferrer">Ver avalia&ccedil;&otilde;es no Google Maps</a>
+            </article>
+          </div>
         </div>
+
+        <p class="reviews-status">
+          Veja mais opini&otilde;es diretamente na ficha oficial da Sucesso Baterias no Google Maps.
+        </p>
       </div>
     </section>
 
@@ -474,6 +521,42 @@
       </div>
     </section>
 
+    <section class="section section--location" id="localizacao">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Localiza&ccedil;&atilde;o</span>
+          <h2>&#128205; Nossa localiza&ccedil;&atilde;o</h2>
+          <p>Confira no mapa a regi&atilde;o da loja e fale com nossa equipe para confirmar a melhor rota, entrega ou instala&ccedil;&atilde;o no local.</p>
+        </div>
+
+        <div class="location-card reveal">
+          <div class="location-card__map">
+            <iframe
+              title="Mapa da Sucesso Baterias em Belo Horizonte"
+              src="https://www.google.com/maps?q=Sucesso%20Baterias%20Belo%20Horizonte%20MG&z=17&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="location-card__content">
+            <span class="location-card__tag">Localiza&ccedil;&atilde;o oficial</span>
+            <h3>Sucesso Baterias no Google Maps</h3>
+            <p>Use a localiza&ccedil;&atilde;o oficial da loja para abrir a rota, conferir a regi&atilde;o atendida e falar com a equipe com mais praticidade.</p>
+            <p><strong>Refer&ecirc;ncia:</strong> Sucesso Baterias, Belo Horizonte - MG</p>
+            <a
+              class="button button--primary"
+              href="https://www.google.com/maps/place/Sucesso+Baterias/@-19.9109166,-43.9290187,17z/data=!3m1!4b1!4m6!3m5!1s0xa69b864b074455:0xb02740050cbf54ba!8m2!3d-19.9109217!4d-43.9264438!16s%2Fg%2F11njdyfrh9?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Abrir no Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="cta">
       <div class="container cta__content">
         <div>
@@ -510,24 +593,36 @@
         <h4>Contatos</h4>
         <ul>
           <li><a href="tel:+5531985640059">(31) 98564-0059</a></li>
-            <li><a href="https://wa.me/5531985640059?text=Olá,%20vim%20pelo%20site%20e%20quero%20falar%20com%20a%20Sucesso%20Baterias." target="_blank" rel="noopener noreferrer">WhatsApp comercial</a></li>
+          <li><a href="https://wa.me/5531985640059?text=Olá,%20vim%20pelo%20site%20e%20quero%20falar%20com%20a%20Sucesso%20Baterias." target="_blank" rel="noopener noreferrer">WhatsApp comercial</a></li>
           <li>Instagram e Facebook</li>
         </ul>
       </div>
-      <div>
+      <div class="footer__info-block">
         <h4>Endere&ccedil;o</h4>
         <ul>
-          <li>Av. Exemplo, 1234</li>
-          <li>Centro - Belo Horizonte/MG</li>
-          <li>Atendimento local e por regi&atilde;o</li>
+          <li>
+            <a
+              href="https://www.google.com/maps/place/Sucesso+Baterias/@-19.9109166,-43.9290187,17z/data=!4m8!3m7!1s0xa69b864b074455:0xb02740050cbf54ba!8m2!3d-19.9109217!4d-43.9264438!9m1!1b1!16s%2Fg%2F11njdyfrh9?hl=pt-BR"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Av. Silviano Brand&atilde;o, 1206
+            </a>
+          </li>
+          <li>Floresta, Belo Horizonte - MG</li>
+          <li>CEP 31015-254</li>
         </ul>
       </div>
-      <div>
+      <div class="footer__info-block">
         <h4>Hor&aacute;rios</h4>
         <ul>
-          <li>Segunda a sexta: 08h &agrave;s 18h</li>
-          <li>S&aacute;bado: 08h &agrave;s 13h</li>
-          <li>Plant&atilde;o noturno sob consulta</li>
+          <li>Domingo: 08:00 &agrave;s 16:00</li>
+          <li>Segunda-feira: 08:00 &agrave;s 21:00</li>
+          <li>Ter&ccedil;a-feira: 08:00 &agrave;s 21:00</li>
+          <li>Quarta-feira: 08:00 &agrave;s 21:00</li>
+          <li>Quinta-feira: 08:00 &agrave;s 21:00</li>
+          <li>Sexta-feira: 08:00 &agrave;s 21:00</li>
+          <li>S&aacute;bado: 08:00 &agrave;s 21:00</li>
         </ul>
       </div>
     </div>
