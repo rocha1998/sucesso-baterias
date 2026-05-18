@@ -795,7 +795,7 @@ body.menu-open .nav-toggle__line:nth-child(3) {
 
 .hero-product--left .hero-product__balloon {
   z-index: 5;
-  top: 2px;
+  top: -36px;
 }
 
 .hero-product__image.heliar {
@@ -2106,7 +2106,7 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .hero-product__balloon--left {
-    top: 4px;
+    top: -22px;
     left: 50%;
     right: auto;
     transform: translateX(-50%);
@@ -2448,7 +2448,7 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .hero-product__balloon--left {
-    top: 2px;
+    top: -14px;
     left: 50%;
     right: auto;
     transform: translateX(-50%);
