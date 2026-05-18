@@ -75,6 +75,22 @@ if (navToggle && navShell) {
     link.addEventListener("click", closeMobileMenu);
   });
 
+  document.addEventListener("click", (event) => {
+    if (!document.body.classList.contains("menu-open")) {
+      return;
+    }
+
+    const target = event.target;
+
+    if (
+      target instanceof Node &&
+      !navShell.contains(target) &&
+      !navToggle.contains(target)
+    ) {
+      closeMobileMenu();
+    }
+  });
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeMobileMenu();
