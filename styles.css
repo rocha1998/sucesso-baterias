@@ -2244,7 +2244,7 @@ body.menu-open .nav-toggle__line:nth-child(3) {
 
   .hero__badge {
     top: 0.4rem;
-    right: calc(50% - 124px);
+    right: calc(50% - 110px);
     width: 94px;
     height: 94px;
     padding: 0.64rem;
