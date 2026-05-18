@@ -777,6 +777,14 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   transform: translateY(0);
 }
 
+.hero-product--left {
+  z-index: 4;
+}
+
+.hero-product--left .hero-product__balloon {
+  z-index: 5;
+}
+
 .hero-product__image.heliar {
   width: 214px;
 }
