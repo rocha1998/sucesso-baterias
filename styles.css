@@ -618,9 +618,10 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 545px;
-  margin-top: -3.2rem;
-  padding-top: 0;
+  min-height: 470px;
+  margin-top: -1.2rem;
+  padding-top: 1.25rem;
+  overflow: visible;
 }
 
 .hero__stage::before {
@@ -649,9 +650,9 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 22px;
+  gap: 32px;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 12px;
   flex-wrap: nowrap;
   padding: 0;
 }
@@ -785,15 +786,15 @@ body.menu-open .nav-toggle__line:nth-child(3) {
 }
 
 .hero-product__image.heliar {
-  width: 205px;
+  width: 210px;
 }
 
 .hero-product__image.moura {
-  width: 300px;
+  width: 320px;
 }
 
 .hero-product__image.tudor {
-  width: 205px;
+  width: 210px;
 }
 
 .hero-batteries img:hover,
@@ -1993,8 +1994,8 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .hero__stage {
-    min-height: 440px;
-    margin-top: -2.4rem;
+    min-height: 400px;
+    margin-top: -1rem;
   }
 
   .hero__stage::before {
@@ -2039,17 +2040,17 @@ body.menu-open .nav-toggle__line:nth-child(3) {
 
   .hero-products {
     width: min(100%, 840px);
-    gap: 28px;
+    gap: 20px;
     flex-wrap: nowrap;
   }
 
   .hero-product__image.heliar,
   .hero-product__image.tudor {
-    width: 180px;
+    width: 168px;
   }
 
   .hero-product__image.moura {
-    width: 276px;
+    width: 250px;
   }
 }
 
@@ -2202,8 +2203,8 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .hero__stage {
-    min-height: 340px;
-    margin-top: -1.7rem;
+    min-height: 320px;
+    margin-top: -0.8rem;
     padding-top: 0.15rem;
   }
 
@@ -2213,7 +2214,7 @@ body.menu-open .nav-toggle__line:nth-child(3) {
 
   .hero-products {
     width: 100%;
-    gap: 16px;
+    gap: 10px;
     flex-wrap: wrap;
     padding: 0;
   }
