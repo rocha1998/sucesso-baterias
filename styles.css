@@ -622,9 +622,9 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 470px;
-  margin-top: -1.2rem;
-  padding-top: 1.25rem;
+  min-height: 430px;
+  margin-top: 0;
+  padding-top: 2.8rem;
   overflow: visible;
 }
 
@@ -654,11 +654,16 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 32px;
+  gap: 12px;
   width: 100%;
-  margin-top: 12px;
+  margin-top: 0;
   flex-wrap: nowrap;
   padding: 0;
+}
+
+.hero-product--left {
+  margin-right: -92px;
+  align-self: flex-end;
 }
 
 .hero-product {
@@ -789,16 +794,24 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   transform: translateY(0);
 }
 
+.hero-product--right {
+  transform: translate(-10px, 26px);
+}
+
+.hero-product--left {
+  transform: translate(44px, 26px);
+}
+
 .hero-product__image.heliar {
-  width: 230px;
+  width: 220px;
 }
 
 .hero-product__image.moura {
-  width: 320px;
+  width: 286px;
 }
 
 .hero-product__image.tudor {
-  width: 210px;
+  width: 220px;
 }
 
 .hero-batteries img:hover,
@@ -822,11 +835,11 @@ body.menu-open .nav-toggle__line:nth-child(3) {
 .hero__badge {
   position: absolute;
   z-index: 2;
-  top: 0.2rem;
-  right: calc(50% - 232px);
-  width: 156px;
-  height: 156px;
-  padding: 1rem;
+  top: 1.7rem;
+  right: calc(50% - 188px);
+  width: 136px;
+  height: 136px;
+  padding: 0.9rem;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -1998,8 +2011,9 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .hero__stage {
-    min-height: 400px;
-    margin-top: -1rem;
+    min-height: 370px;
+    margin-top: 0;
+    padding-top: 2.1rem;
   }
 
   .hero__stage::before {
@@ -2007,10 +2021,10 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .hero__badge {
-    top: 0.3rem;
-    right: calc(50% - 186px);
-    width: 126px;
-    height: 126px;
+    top: 1.2rem;
+    right: calc(50% - 164px);
+    width: 118px;
+    height: 118px;
   }
 
   .hero-product__balloon {
@@ -2044,21 +2058,26 @@ body.menu-open .nav-toggle__line:nth-child(3) {
 
   .hero-products {
     width: min(100%, 840px);
-    gap: 20px;
+    gap: 12px;
     flex-wrap: nowrap;
+  }
+
+  .hero-product--left {
+    margin-right: -56px;
+    transform: translate(24px, 18px);
+  }
+
+  .hero-product--right {
+    transform: translate(-6px, 18px);
   }
 
   .hero-product__image.heliar,
   .hero-product__image.tudor {
-    width: 168px;
-  }
-
-  .hero-product__image.heliar {
-    width: 182px;
+    width: 156px;
   }
 
   .hero-product__image.moura {
-    width: 250px;
+    width: 220px;
   }
 }
 
@@ -2224,16 +2243,30 @@ body.menu-open .nav-toggle__line:nth-child(3) {
     width: 100%;
     justify-content: center;
     align-items: flex-end;
-    gap: 8px;
+    gap: 2px;
     flex-wrap: nowrap;
     padding: 0;
+  }
+
+  .hero-product--left {
+    margin-right: -34px;
+    transform: translate(12px, 10px);
+  }
+
+  .hero-product--right {
+    transform: translate(-4px, 10px);
+  }
+
+  .hero-product--right {
+    transform: translateY(54px);
   }
 
   .hero-product {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding-bottom: 6px;
+    flex: 0 0 auto;
+    padding-bottom: 4px;
   }
 
   .hero-product__image {
@@ -2246,11 +2279,11 @@ body.menu-open .nav-toggle__line:nth-child(3) {
 
   .hero-product__image.heliar,
   .hero-product__image.tudor {
-    width: 98px;
+    width: 102px;
   }
 
   .hero-product__image.moura {
-    width: 124px;
+    width: 118px;
   }
 
   .hero__badge {
