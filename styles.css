@@ -2203,9 +2203,9 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .hero__stage {
-    min-height: 320px;
-    margin-top: -0.8rem;
-    padding-top: 0.15rem;
+    min-height: 280px;
+    margin-top: -0.55rem;
+    padding-top: 0.1rem;
   }
 
   .hero__stage::before {
@@ -2214,18 +2214,18 @@ body.menu-open .nav-toggle__line:nth-child(3) {
 
   .hero-products {
     width: 100%;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 6px;
+    flex-wrap: nowrap;
     padding: 0;
   }
 
   .hero-product__image.heliar,
   .hero-product__image.tudor {
-    width: 122px;
+    width: 96px;
   }
 
   .hero-product__image.moura {
-    width: 178px;
+    width: 138px;
   }
 
   .hero__badge {
@@ -2253,9 +2253,9 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .hero-product__balloon {
-    width: 72px;
-    height: 72px;
-    padding: 0.54rem 0.5rem 0.48rem;
+    width: 60px;
+    height: 60px;
+    padding: 0.42rem 0.38rem 0.36rem;
   }
 
   .hero-product__balloon::after {
@@ -2265,17 +2265,28 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .hero-product__balloon strong {
-    font-size: 0.52rem;
+    font-size: 0.44rem;
   }
 
   .hero-product__balloon span {
-    font-size: 0.46rem;
+    font-size: 0.4rem;
   }
 
   .hero-product__balloon em {
     margin-top: 0.14rem;
-    padding: 0.09rem 0.24rem;
-    font-size: 0.5rem;
+    padding: 0.08rem 0.2rem;
+    font-size: 0.42rem;
+  }
+
+  .hero-product__balloon--left {
+    top: 4%;
+    right: 2px;
+  }
+
+  .hero-product__balloon--right {
+    top: 10%;
+    right: -4px;
+    left: auto;
   }
 
   .hero-product__balloon--left {
