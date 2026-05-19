@@ -116,6 +116,13 @@ select {
   box-shadow: 0 10px 22px rgba(4, 18, 53, 0.22);
 }
 
+.contact-strip__brand-mobile {
+  padding: 0.3rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+  box-shadow: 0 10px 24px rgba(4, 18, 53, 0.24);
+}
+
 .contact-strip__items {
   flex-wrap: wrap;
   gap: 1rem;
