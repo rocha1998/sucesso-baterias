@@ -1056,14 +1056,16 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   bottom: auto;
   width: clamp(84px, 9vw, 112px);
   border-radius: 50%;
-  opacity: 0.78;
-  filter: none;
+  opacity: 0.92;
+  filter: brightness(0.92) saturate(1.32) contrast(1.14);
   transform: none;
+  box-shadow: none;
 }
 
 .region-card.region-card--featured .card-logo-watermark {
-  opacity: 0.82;
-  filter: none;
+  opacity: 0.92;
+  filter: brightness(0.92) saturate(1.32) contrast(1.14);
+  box-shadow: none;
 }
 
 .highlight-card:hover,
@@ -2163,7 +2165,7 @@ body.menu-open .nav-toggle__line:nth-child(3) {
     right: 0.8rem;
     bottom: auto;
     width: 92px;
-    opacity: 0.72;
+    opacity: 0.82;
   }
 
   .card-logo-watermark--top {
@@ -2488,7 +2490,7 @@ body.menu-open .nav-toggle__line:nth-child(3) {
     right: 0.7rem;
     bottom: auto;
     width: 74px;
-    opacity: 0.68;
+    opacity: 0.82;
   }
 
   .card-logo-watermark--top {
