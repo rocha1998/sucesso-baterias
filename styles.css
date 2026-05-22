@@ -2575,12 +2575,13 @@ body.menu-open .nav-toggle__line:nth-child(3) {
     width: auto;
     flex: 1 1 auto;
     justify-content: flex-start;
-    gap: 0.12rem;
+    gap: 0.35rem 0.8rem;
     font-size: 0.84rem;
     line-height: 1.35;
     text-align: left;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   .contact-strip__brand-mobile {
@@ -3041,8 +3042,9 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .contact-strip__items {
-    flex-direction: column;
-    gap: 0.3rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.2rem 0.65rem;
     font-size: 0.78rem;
   }
 
