@@ -1652,8 +1652,8 @@ body.menu-open .nav-toggle__line:nth-child(3) {
 
 .stars--summary {
   font-size: 1.35rem;
-  justify-content: center;
-  width: 100%;
+  justify-content: flex-start;
+  width: auto;
 }
 
 .reviews-overview__content {
@@ -3010,6 +3010,11 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   .reviews-overview__content,
   .reviews-status {
     text-align: center;
+  }
+
+  .stars--summary {
+    justify-content: center;
+    width: 100%;
   }
 
   .reviews-overview__content {
