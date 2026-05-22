@@ -74,10 +74,7 @@ select {
 }
 
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+  display: contents;
 }
 
 .contact-strip {
@@ -170,8 +167,12 @@ select {
 }
 
 .topbar {
+  position: sticky;
+  top: 0;
+  z-index: 55;
+  padding: 0.75rem 0;
   backdrop-filter: blur(18px);
-  background: linear-gradient(135deg, rgba(4, 18, 53, 0.96), rgba(13, 39, 104, 0.94));
+  background: linear-gradient(135deg, rgba(4, 18, 53, 0.98), rgba(13, 39, 104, 0.96));
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 12px 28px rgba(4, 18, 53, 0.18);
 }
@@ -180,8 +181,6 @@ select {
   justify-content: space-between;
   gap: 1rem;
   min-height: 90px;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
   padding: 0.95rem 1.15rem;
   border-radius: 26px;
   background:
@@ -1054,17 +1053,17 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   top: 0.9rem;
   right: 0.9rem;
   bottom: auto;
-  width: clamp(84px, 9vw, 112px);
+  width: clamp(72px, 7vw, 96px);
   border-radius: 50%;
-  opacity: 0.92;
-  filter: brightness(0.92) saturate(1.32) contrast(1.14);
+  opacity: 0.9;
+  filter: brightness(0.72) saturate(1.45) contrast(1.2);
   transform: none;
   box-shadow: none;
 }
 
 .region-card.region-card--featured .card-logo-watermark {
-  opacity: 0.92;
-  filter: brightness(0.92) saturate(1.32) contrast(1.14);
+  opacity: 0.9;
+  filter: brightness(0.72) saturate(1.45) contrast(1.2);
   box-shadow: none;
 }
 
@@ -1332,7 +1331,8 @@ body.menu-open .nav-toggle__line:nth-child(3) {
 }
 
 .product-showcase__card:hover,
-.product-showcase__card:focus-visible {
+.product-showcase__card:focus-visible,
+.product-showcase__card:active {
   transform: translateY(-10px);
   border-color: rgba(243, 179, 0, 0.38);
   background: linear-gradient(180deg, #f4f6fb 0%, #ffffff 100%);
@@ -1340,46 +1340,55 @@ body.menu-open .nav-toggle__line:nth-child(3) {
 }
 
 .product-showcase__card:hover::before,
-.product-showcase__card:focus-visible::before {
+.product-showcase__card:focus-visible::before,
+.product-showcase__card:active::before {
   opacity: 1;
   transform: scale(1.08);
 }
 
 .product-showcase__card:hover::after,
-.product-showcase__card:focus-visible::after {
+.product-showcase__card:focus-visible::after,
+.product-showcase__card:active::after {
   opacity: 1;
 }
 
 .product-showcase__card:hover .product-showcase__media svg,
 .product-showcase__card:focus-visible .product-showcase__media svg,
+.product-showcase__card:active .product-showcase__media svg,
 .product-showcase__card:hover .product-showcase__image,
-.product-showcase__card:focus-visible .product-showcase__image {
+.product-showcase__card:focus-visible .product-showcase__image,
+.product-showcase__card:active .product-showcase__image {
   filter: grayscale(0) saturate(1.12) contrast(1.03);
   transform: scale(1.06);
 }
 
 .product-showcase__card:hover .product-showcase__image--car,
-.product-showcase__card:focus-visible .product-showcase__image--car {
+.product-showcase__card:focus-visible .product-showcase__image--car,
+.product-showcase__card:active .product-showcase__image--car {
   transform: translateY(-18px) scale(1.64);
 }
 
 .product-showcase__card:hover .product-showcase__image--moto,
-.product-showcase__card:focus-visible .product-showcase__image--moto {
+.product-showcase__card:focus-visible .product-showcase__image--moto,
+.product-showcase__card:active .product-showcase__image--moto {
   transform: translateY(-12px) scale(1.78);
 }
 
 .product-showcase__card:hover .product-showcase__image--truck,
-.product-showcase__card:focus-visible .product-showcase__image--truck {
+.product-showcase__card:focus-visible .product-showcase__image--truck,
+.product-showcase__card:active .product-showcase__image--truck {
   transform: translateY(-16px) scale(1.66);
 }
 
 .product-showcase__card:hover .product-showcase__image--van,
-.product-showcase__card:focus-visible .product-showcase__image--van {
+.product-showcase__card:focus-visible .product-showcase__image--van,
+.product-showcase__card:active .product-showcase__image--van {
   transform: translateY(-12px) scale(1.8);
 }
 
 .product-showcase__card:hover .product-showcase__link::after,
-.product-showcase__card:focus-visible .product-showcase__link::after {
+.product-showcase__card:focus-visible .product-showcase__link::after,
+.product-showcase__card:active .product-showcase__link::after {
   width: 52px;
 }
 
@@ -1428,10 +1437,16 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+  padding-right: 6.8rem;
 }
 
 .region-card .button {
   margin-top: auto;
+}
+
+.region-card h3,
+.region-card p {
+  max-width: 22rem;
 }
 
 .region-card--featured {
@@ -1611,6 +1626,8 @@ body.menu-open .nav-toggle__line:nth-child(3) {
 
 .stars--summary {
   font-size: 1.35rem;
+  justify-content: center;
+  width: 100%;
 }
 
 .reviews-overview__content {
@@ -2197,10 +2214,12 @@ body.menu-open .nav-toggle__line:nth-child(3) {
     width: min(calc(100% - 1.25rem), var(--container));
   }
 
+  .topbar {
+    padding: 0.5rem 0;
+  }
+
   .topbar__content {
     min-height: 72px;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
   }
 
   .brand {
@@ -2296,7 +2315,7 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .product-showcase__card {
-    min-height: 468px;
+    min-height: 510px;
     padding: 1.2rem 1.15rem 0.95rem;
     border-radius: 24px;
     scroll-snap-align: center;
@@ -2315,8 +2334,8 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .product-showcase__media {
-    min-height: 250px;
-    margin-top: 0.4rem;
+    min-height: 280px;
+    margin-top: 0.8rem;
   }
 
   .product-showcase__media svg,
@@ -2325,8 +2344,8 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .product-showcase__image--car {
-    max-height: 330px;
-    transform: translateY(-4px) scale(1.62);
+    max-height: 300px;
+    transform: translateY(8px) scale(1.4);
   }
 
   .product-showcase__image--moto {
@@ -2541,7 +2560,7 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .header {
-    position: sticky;
+    display: contents;
   }
 
   .contact-strip__content {
@@ -2808,6 +2827,10 @@ body.menu-open .nav-toggle__line:nth-child(3) {
     padding: 1.2rem;
   }
 
+  .region-card {
+    padding-right: 1.2rem;
+  }
+
   .reviews-summary-card,
   .reviews-overview__content,
   .review-card {
@@ -2845,7 +2868,7 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .product-showcase__card {
-    min-height: 430px;
+    min-height: 470px;
     padding: 1.05rem 1rem 0.85rem;
   }
 
@@ -2883,13 +2906,13 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .product-showcase__media {
-    min-height: 214px;
-    margin-top: 0.25rem;
+    min-height: 245px;
+    margin-top: 0.6rem;
   }
 
   .product-showcase__image--car {
-    max-height: 300px;
-    transform: translateY(0) scale(1.7);
+    max-height: 270px;
+    transform: translateY(12px) scale(1.36);
   }
 
   .product-showcase__image--moto {
@@ -2919,6 +2942,19 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   .cta__content .button,
   .testimonials__action .button {
     width: 100%;
+  }
+
+  .region-card h3,
+  .region-card p {
+    max-width: calc(100% - 96px);
+  }
+
+  .region-card .card-logo-watermark {
+    top: 0.85rem;
+    right: 0.85rem;
+    width: 64px;
+    opacity: 0.86;
+    filter: brightness(0.74) saturate(1.42) contrast(1.18);
   }
 
   .section-heading,
@@ -3008,6 +3044,10 @@ body.menu-open .nav-toggle__line:nth-child(3) {
     flex-direction: column;
     gap: 0.3rem;
     font-size: 0.78rem;
+  }
+
+  .topbar {
+    padding: 0.42rem 0;
   }
 
   .topbar__content {
@@ -3200,7 +3240,16 @@ body.menu-open .nav-toggle__line:nth-child(3) {
   }
 
   .product-showcase__card:active {
-    transform: scale(0.99);
+    transform: translateY(-6px) scale(0.99);
+  }
+
+  .product-showcase__card:active .product-showcase__media svg,
+  .product-showcase__card:active .product-showcase__image {
+    filter: grayscale(0) saturate(1.08) contrast(1.03);
+  }
+
+  .product-showcase__card:active .product-showcase__image--car {
+    transform: translateY(10px) scale(1.42);
   }
 }
 
