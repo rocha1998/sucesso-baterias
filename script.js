@@ -9,6 +9,9 @@ const promoPopup = document.querySelector("#promo-popup");
 const promoPopupCloseButtons = document.querySelectorAll("[data-popup-close]");
 const reviewsTrack = document.querySelector("#reviews-track");
 const reviewsScrollButtons = document.querySelectorAll("[data-reviews-scroll]");
+const productShowcase = document.querySelector(".product-showcase");
+const productShowcaseCards = document.querySelectorAll(".product-showcase__card");
+const productShowcaseDots = document.querySelectorAll("[data-product-dot]");
 
 const openPromoPopup = () => {
   if (!promoPopup || sessionStorage.getItem("promoPopupDismissed") === "true") {
@@ -130,4 +133,55 @@ if (reviewsTrack) {
       });
     });
   });
+}
+
+if (productShowcase && productShowcaseCards.length && productShowcaseDots.length) {
+  const setActiveProductDot = (activeIndex) => {
+    productShowcaseDots.forEach((dot, index) => {
+      const isActive = index === activeIndex;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-pressed", String(isActive));
+    });
+  };
+
+  const updateActiveProductFromScroll = () => {
+    const showcaseLeft = productShowcase.getBoundingClientRect().left;
+    let closestIndex = 0;
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    productShowcaseCards.forEach((card, index) => {
+      const distance = Math.abs(card.getBoundingClientRect().left - showcaseLeft);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    setActiveProductDot(closestIndex);
+  };
+
+  productShowcaseDots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      const targetCard = productShowcaseCards[index];
+
+      if (!targetCard) {
+        return;
+      }
+
+      targetCard.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+      setActiveProductDot(index);
+    });
+  });
+
+  productShowcase.addEventListener("scroll", updateActiveProductFromScroll, {
+    passive: true,
+  });
+
+  window.addEventListener("resize", updateActiveProductFromScroll);
+  updateActiveProductFromScroll();
 }
