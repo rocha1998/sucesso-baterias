@@ -12,6 +12,9 @@ const reviewsScrollButtons = document.querySelectorAll("[data-reviews-scroll]");
 const productShowcase = document.querySelector(".product-showcase");
 const productShowcaseCards = document.querySelectorAll(".product-showcase__card");
 const productShowcaseDots = document.querySelectorAll("[data-product-dot]");
+const whatsappLinks = document.querySelectorAll('a[href*="wa.me/"]');
+
+const GOOGLE_ADS_CONTACT_SEND_TO = "AW-18158988776/SCe8CMmg8bYcEOjb8NJD";
 
 const openPromoPopup = () => {
   if (!promoPopup || sessionStorage.getItem("promoPopupDismissed") === "true") {
@@ -32,6 +35,34 @@ const closePromoPopup = () => {
   promoPopup.setAttribute("aria-hidden", "true");
   document.body.classList.remove("promo-open");
   sessionStorage.setItem("promoPopupDismissed", "true");
+};
+
+const trackGoogleAdsContactConversion = ({ url, openInNewTab }) => {
+  if (typeof window.gtag !== "function") {
+    if (url && !openInNewTab) {
+      window.location.href = url;
+    }
+
+    return;
+  }
+
+  let hasNavigated = false;
+
+  const navigateToContact = () => {
+    if (!url || openInNewTab || hasNavigated) {
+      return;
+    }
+
+    hasNavigated = true;
+    window.location.href = url;
+  };
+
+  window.gtag("event", "conversion", {
+    send_to: GOOGLE_ADS_CONTACT_SEND_TO,
+    event_callback: navigateToContact,
+  });
+
+  window.setTimeout(navigateToContact, 1000);
 };
 
 animatedElements.forEach((element) => {
@@ -118,6 +149,34 @@ if (promoPopup) {
     if (event.key === "Escape") {
       closePromoPopup();
     }
+  });
+}
+
+if (whatsappLinks.length) {
+  whatsappLinks.forEach((link) => {
+    if (link.dataset.conversionBound === "true") {
+      return;
+    }
+
+    link.dataset.conversionBound = "true";
+
+    link.addEventListener("click", (event) => {
+      if (event.defaultPrevented || event.button !== 0) {
+        return;
+      }
+
+      const isModifiedClick = event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+      const openInNewTab = link.target === "_blank" || isModifiedClick;
+
+      if (!openInNewTab) {
+        event.preventDefault();
+      }
+
+      trackGoogleAdsContactConversion({
+        url: link.href,
+        openInNewTab,
+      });
+    });
   });
 }
 
